@@ -47,9 +47,11 @@ class Application {
 		catch (IOException e) { 
 			System.err.println("Fin de la connexion"); 
 		}
+
 		/* Refermer dans tous les cas la socket */
 		try { 
 			if (s != null) s.close(); 
-		} catch (IOException e2) {}		
+		} catch (IOException e2) {
+		}		
 	}
 }
