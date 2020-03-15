@@ -44,6 +44,7 @@ class Application {
 								System.out.println(line.replaceAll("##", "\n"));
 							break;
 						}
+						/* Si ca commence par &&, ça veut dire que le serveur n'attend pas de réponse tout de suite */
 						if(line.charAt(0) == '&' && line.charAt(1) == '&') {
 							System.out.println(line.replaceAll("##", "\n").replaceAll("&&", ""));
 						}
@@ -61,7 +62,6 @@ class Application {
 			catch (IOException e) { 
 				System.err.println("Fin de la connexion"); 
 			}
-			/* Refermer dans tous les cas la socket */
 			try { 
 				if (s != null) s.close(); 
 			} catch (IOException e2) {}		
